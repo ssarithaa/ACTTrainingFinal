@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ACTproj" >
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+    <test name="User Account Registration">
+        <parameter name="browser" value="Chrome"  />
+        <parameter name="url" value=""  />
+        <classes>
+            <class name="testcases.Registration"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
