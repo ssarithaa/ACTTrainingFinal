@@ -1,5 +1,7 @@
 package PageFactory;
 
+import ReportsClass.ExtentTestManager;
+import com.aventstack.extentreports.Status;
 import common.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,5 +27,6 @@ public class CreateAcctPersInfoPage2PF extends BasePage {
                                   {"//input[@name='cellPhone']","7209887987"},{"//input[@name='cellPhone']","7107868767"}
                                   };
         fillAllEntries(valuesToEnter);
+        ExtentTestManager.getTest().log(Status.PASS, "All values entered");
     }
     }

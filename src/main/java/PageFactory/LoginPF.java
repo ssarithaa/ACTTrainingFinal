@@ -17,15 +17,16 @@ public class LoginPF extends BasePage{
     @FindBy(xpath="//input[@name='password']") WebElement passwordField;
     @FindBy(xpath="//button[@type='submit']") WebElement submitButton;
 
-
+WebDriver driver;
     public LoginPF(WebDriver driver) throws IOException {
     super(driver);
+    this.driver=driver;
     }
 
 
 
     public void verifyHomePageLoaded() throws InterruptedException {
-
+        driver.manage().window().maximize();
        boolean present=verifyElementExists(loginButton);
        if(present)
        {

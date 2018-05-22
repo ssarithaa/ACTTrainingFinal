@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class CreateAccountPage1PF extends BasePage {
     WebDriver driver;
@@ -24,7 +25,8 @@ public class CreateAccountPage1PF extends BasePage {
     @FindBy(xpath="//input[@name='password']") WebElement passwdField;
     @FindBy(xpath="//input[@id='termsAgreement']") WebElement termsCheckbox;
     @FindBy(xpath="//button[contains(text(),'Continue create account')]") WebElement continueBtn;
-
+    static  public String emailID;
+    static  public String passWd;
 
     JavascriptActions js;
 
@@ -39,8 +41,12 @@ public class CreateAccountPage1PF extends BasePage {
     }
     public void enterUserCredentials()
     {
-        enterText(emailField,"saritha@gmail.com");
-        enterText(passwdField,"Sarithagmail1!");
+        Random random=new Random();
+        int randomNum=random.nextInt(100)+1;
+        emailID=randomNum+"testthisid@gmail.com";
+        passWd="Testpassword123!";
+        enterText(emailField,emailID);
+        enterText(passwdField,passWd);
         ExtentTestManager.getTest().log(Status.PASS, "Entered new user credentials");
 
     }

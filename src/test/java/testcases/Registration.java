@@ -1,9 +1,6 @@
 package testcases;
 
-import PageFactory.CreateAccountPage1PF;
-import PageFactory.CreateAcctPersInfoPage2PF;
-import PageFactory.DashboardLandingPF;
-import PageFactory.LoginPF;
+import PageFactory.*;
 import common.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -18,6 +15,9 @@ public class Registration extends BaseTest {
     LoginPF loginpage;
     CreateAccountPage1PF createAcct1;
     CreateAcctPersInfoPage2PF createAcctPersInfo2;
+    CreateAcctAddiInfoPage3PF createAcctAddiInfo3;
+    VerifyAcctCreationPF verifyPage;
+
 
     @Test(description = "Verify user is able to load the Create Account page",priority = 1)
     public void verifyCreateAcctpage() throws InterruptedException {
@@ -32,9 +32,18 @@ public class Registration extends BaseTest {
         createAcct1.clickContinueBtn();//continue to enter personal info
         createAcctPersInfo2.enterValue();
         createAcct1.clickContinueBtn();//continue after entering personal info
-
+        createAcctAddiInfo3.enterValues();
+        createAcctAddiInfo3.clickContinue();
+        verifyPage.verifyAccountCreated();
+        verifyPage.continueToLogin();
     }
 
+@Test(description = "Verify user is able to login with the new account", priority = 3)
+public void verifyLoginNew()
+{
+loginpage.loginToApp(CreateAccountPage1PF.emailID,CreateAccountPage1PF.passWd);
+loginpage.clickSubmit();
+}
 
 
     @Parameters({"browser","url"})
@@ -46,7 +55,9 @@ public class Registration extends BaseTest {
         driver.get(url);
         createAcct1=new CreateAccountPage1PF(driver);
         createAcctPersInfo2=new CreateAcctPersInfoPage2PF(driver);
+        createAcctAddiInfo3=new CreateAcctAddiInfoPage3PF(driver);
         loginpage=new LoginPF(driver);
+        verifyPage=new VerifyAcctCreationPF(driver);
     }
     @AfterClass
     private void setUpAfter()

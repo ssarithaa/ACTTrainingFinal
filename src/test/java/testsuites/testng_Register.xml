@@ -5,8 +5,8 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
     <test name="User Account Registration">
-        <parameter name="browser" value="Chrome"  />
-        <parameter name="url" value=""  />
+        <parameter name="browser" value="Firefox"  />
+        <parameter name="url" value="https://tcm-tst.act.org/"  />
         <classes>
             <class name="testcases.Registration"/>
         </classes>

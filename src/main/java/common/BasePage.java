@@ -1,11 +1,16 @@
 package common;
 
+import ReportsClass.ExtentTestManager;
+import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import sun.plugin.util.UIUtil;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Random;
 
 public class BasePage {
 
@@ -55,6 +60,12 @@ WebDriver driver;
 
     }
     }
-
+protected void randomOptionClick(List<WebElement> elementList)
+{
+    Random random=new Random();
+    int randomNumber= random.nextInt(elementList.size());
+    elementList.get(randomNumber).click();
+    ExtentTestManager.getTest().log(Status.PASS, "Random option selected");
+}
 
 }

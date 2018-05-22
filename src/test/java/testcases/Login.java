@@ -24,7 +24,7 @@ WebDriver driver;
         loginpage.clickLogin();//Select from login or Create New Account
 
     }
-    @Test(description = "Verify user is not allowed to login with invalid credentials",priority = 2,dataProvider = "credentials",dataProviderClass = testdata.class)
+    @Test(description = "Verify user is not allowed to login with invalid credentials",priority = 2,dataProvider = "invalidcredentials",dataProviderClass = testdata.class)
     public void verifyInvalidLogin(String uname, String passwd) throws InterruptedException {
         loginpage.loginToApp(uname, passwd);
         loginpage.clickSubmit();
@@ -32,9 +32,9 @@ WebDriver driver;
        // dashboardlanding.isPageLoaded();
 
     }
-    @Test(description = "Verify user is able to login with valid credentials",priority = 3)
-    public void verifyValidLogin() throws InterruptedException {
-         loginpage.loginToApp("stevenbaron11@gmail.com","Qweqweqwe1!");
+    @Test(description = "Verify user is able to login with valid credentials",priority = 3,dataProvider = "validcredentials",dataProviderClass = testdata.class)
+    public void verifyValidLogin(String uname, String passwd) throws InterruptedException {
+         loginpage.loginToApp(uname,passwd);
         loginpage.clickSubmit();
         dashboardlanding.isPageLoaded();
 
