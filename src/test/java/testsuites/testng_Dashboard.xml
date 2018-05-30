@@ -6,8 +6,8 @@
     </listeners>
     <test name="Dashboard">
         <parameter name="browser" value="Firefox"  />
-        <parameter name="url" value="https://tcm-tst.act.org/"  />
-        <parameter name="userName" value="stevenbaron11@gmail.com"  />
+        <parameter name="url" value=""  />
+        <parameter name="userName" value=""  />
         <parameter name="passWd" value="Qweqweqwe1!"  />
 
         <classes>
