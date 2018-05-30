@@ -34,7 +34,8 @@ WebDriver driver;
     }
     @Test(description = "Verify user is able to login with valid credentials",priority = 3,dataProvider = "validcredentials",dataProviderClass = testdata.class)
     public void verifyValidLogin(String uname, String passwd) throws InterruptedException {
-         loginpage.loginToApp(uname,passwd);
+
+        loginpage.loginToApp(uname,passwd);
         loginpage.clickSubmit();
         dashboardlanding.isPageLoaded();
 

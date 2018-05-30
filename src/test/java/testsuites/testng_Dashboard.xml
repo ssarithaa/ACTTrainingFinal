@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ACTproj" >
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+    <test name="Dashboard">
+        <parameter name="browser" value="Firefox"  />
+        <parameter name="url" value="https://tcm-tst.act.org/"  />
+        <parameter name="userName" value="stevenbaron11@gmail.com"  />
+        <parameter name="passWd" value="Qweqweqwe1!"  />
+
+        <classes>
+            <class name="testcases.Dashboard"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

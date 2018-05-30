@@ -41,6 +41,7 @@ WebDriver driver;
     {
             element.click();
     }
+
     }
 
     protected void enterText(WebElement element, String valueToEnter)

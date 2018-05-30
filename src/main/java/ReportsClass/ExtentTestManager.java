@@ -2,7 +2,9 @@ package ReportsClass;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import org.openqa.selenium.TakesScreenshot;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +29,8 @@ import java.util.Map;
             extentTestMap.put((int) (long) (Thread.currentThread().getId()), test);
             return test;
         }
+
+
     }
 
 

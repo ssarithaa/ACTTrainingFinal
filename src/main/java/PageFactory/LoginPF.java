@@ -35,7 +35,9 @@ WebDriver driver;
     }
     public void clickLogin()
     {
+
     clickElement(loginButton);
+    if(ExtentTestManager.getTest()!=null) //to facilitate calling login from Basetest
     ExtentTestManager.getTest().log(Status.PASS,"Clicked Login Button");
     }
     public void clickNewAcct()
@@ -50,11 +52,13 @@ public void loginToApp(String uname,String passwd)
     passwordField.clear();
     enterText(usernameField,uname);
     enterText(passwordField,passwd);
+    if(ExtentTestManager.getTest()!=null)//to facilitate calling login from Basetest
     ExtentTestManager.getTest().log(Status.PASS,"Entered login Credentials");
 }
 public void clickSubmit()
 {
    clickElement(submitButton);
+    if(ExtentTestManager.getTest()!=null)//to facilitate calling login from Basetest
    ExtentTestManager.getTest().log(Status.PASS,"Clicked submit button");
 }
 }

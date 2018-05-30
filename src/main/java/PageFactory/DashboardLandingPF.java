@@ -16,6 +16,7 @@ public class DashboardLandingPF extends BasePage {
 
     @FindBy(xpath = "//h4[contains(text(),'Hi')]")
     WebElement welcomeText;
+    @FindBy(xpath="//a[contains(text(),'profile')]") WebElement profileLink;
 
 
     public void isPageLoaded() {
@@ -23,5 +24,11 @@ public class DashboardLandingPF extends BasePage {
             ExtentTestManager.getTest().log(Status.PASS, "Logged in successfully");
         }
     }
+public void clickProfileLink()
+{
+    clickElement(profileLink);
+    ExtentTestManager.getTest().log(Status.PASS, "Clicked on 'Complete your profile' link");
+}
+
 }
 
